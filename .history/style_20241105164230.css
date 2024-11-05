@@ -7,10 +7,9 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
-  height: 100%;
 }
 .book-display{
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

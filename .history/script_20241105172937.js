@@ -11,7 +11,7 @@ const myLibrary = [
 ];
 
 
-displayBookToLibrary();
+// displayBookToLibrary();
 
 function Book(title,author,pages,read) {
   this.title = title;
@@ -34,20 +34,18 @@ function addBookToLibrary(title,author,pages,read) {
   myLibrary.push(book.info());
 }
 
-function displayBookToLibrary(){
+// function displayBookToLibrary(){
+//   myLibrary.forEach(book => {
 
-  bookDisplayElement.innerHTML = '';
-  
-  myLibrary.forEach(book => {
-    const div = document.createElement('div');
-    div.classList.add('book-card');
-    div.innerHTML = `
-      <div>Title: ${book.title}, Author: ${book.author}, ${book.pages} pages, Read: ${book.read}</div>
-    `
-    bookDisplayElement.appendChild(div);
-    console.log(book);
-  })
-}
+//     const div = document.createElement('div');
+//     div.classList.add('book-card');
+//     div.innerHTML = `
+//       <div>Title: ${book.title}, Author: ${book.author}, ${book.pages} pages, Read: ${book.read}</div>
+//     `
+//     bookDisplayElement.appendChild(div);
+//     console.log(book);
+//   })
+// }
 
 bookButtonElement.addEventListener('click', () => {
   // const bookTitleValue = bookTitleElement.value;
@@ -60,8 +58,18 @@ bookButtonElement.addEventListener('click', () => {
   // bookReadElement.value = '';
   // addBookToLibrary(bookTitleValue,bookAuthorValue,bookPagesValue,bookReadValue);
   addBookToLibrary('bookTitleValue','bookAuthorValue','bookPagesValue','bookReadValue');
-  displayBookToLibrary();
   
   console.log(myLibrary);
+})
+
+myLibrary.forEach(book => {
+
+  const div = document.createElement('div');
+  div.classList.add('book-card');
+  div.innerHTML = `
+    <div>Title: ${book.title}, Author: ${book.author}, ${book.pages} pages, Read: ${book.read}</div>
+  `
+  bookDisplayElement.appendChild(div);
+  console.log(book);
 })
 

@@ -10,9 +10,6 @@ const myLibrary = [
   {title: '1984', author: 'George Orwell', pages: 328, read: false},
 ];
 
-
-displayBookToLibrary();
-
 function Book(title,author,pages,read) {
   this.title = title;
   this.author = author;
@@ -32,35 +29,34 @@ function Book(title,author,pages,read) {
 function addBookToLibrary(title,author,pages,read) {
   const book = new Book(title,author,pages,read);
   myLibrary.push(book.info());
+  displayBookToLibrary();
 }
 
 function displayBookToLibrary(){
-
-  bookDisplayElement.innerHTML = '';
-  
   myLibrary.forEach(book => {
-    const div = document.createElement('div');
-    div.classList.add('book-card');
-    div.innerHTML = `
-      <div>Title: ${book.title}, Author: ${book.author}, ${book.pages} pages, Read: ${book.read}</div>
-    `
-    bookDisplayElement.appendChild(div);
+    // const div = document.createElement('div');
+    // div.classList.add('book-card');
+    // div.innerHTML = `
+    //   <div>${title}</div>
+    //   <div>${author}</div>
+    //   <div>${pages}</div>
+    //   <div>${read}</div>
+    // `
+    // bookDisplayElement.appendChild(div);
     console.log(book);
   })
 }
 
 bookButtonElement.addEventListener('click', () => {
-  // const bookTitleValue = bookTitleElement.value;
-  // const bookAuthorValue = bookAuthorElement.value;
-  // const bookPagesValue = bookPagesElement.value;
-  // const bookReadValue = bookReadElement.value;
-  // bookTitleElement.value = '';
-  // bookAuthorElement.value = '';
-  // bookPagesElement.value = '';
-  // bookReadElement.value = '';
-  // addBookToLibrary(bookTitleValue,bookAuthorValue,bookPagesValue,bookReadValue);
-  addBookToLibrary('bookTitleValue','bookAuthorValue','bookPagesValue','bookReadValue');
-  displayBookToLibrary();
+  const bookTitleValue = bookTitleElement.value;
+  const bookAuthorValue = bookAuthorElement.value;
+  const bookPagesValue = bookPagesElement.value;
+  const bookReadValue = bookReadElement.value;
+  bookTitleElement.value = '';
+  bookAuthorElement.value = '';
+  bookPagesElement.value = '';
+  bookReadElement.value = '';
+  addBookToLibrary(bookTitleValue,bookAuthorValue,bookPagesValue,bookReadValue);
   
   console.log(myLibrary);
 })

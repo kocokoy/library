@@ -11,6 +11,7 @@ body{
   height: 100%;
 }
 .book-display{
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

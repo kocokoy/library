@@ -1,16 +1,18 @@
 body{
   width: 100%;
   height: 100vh;
-}
-.container{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.container{
+
   border: 1px solid red;
-  height: 100%;
+  height: 300px;
 }
 .book-display{
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

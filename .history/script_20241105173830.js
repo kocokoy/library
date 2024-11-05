@@ -35,16 +35,16 @@ function addBookToLibrary(title,author,pages,read) {
 }
 
 function displayBookToLibrary(){
+  myLibrary.forEach((book,i) => {
+    if(book.title != book.title){
+      const div = document.createElement('div');
+      div.classList.add('book-card');
+      div.innerHTML = `
+        <div>Title: ${book.title}, Author: ${book.author}, ${book.pages} pages, Read: ${book.read}</div>
+      `
+      bookDisplayElement.appendChild(div);
+    }
 
-  bookDisplayElement.innerHTML = '';
-  
-  myLibrary.forEach(book => {
-    const div = document.createElement('div');
-    div.classList.add('book-card');
-    div.innerHTML = `
-      <div>Title: ${book.title}, Author: ${book.author}, ${book.pages} pages, Read: ${book.read}</div>
-    `
-    bookDisplayElement.appendChild(div);
     console.log(book);
   })
 }

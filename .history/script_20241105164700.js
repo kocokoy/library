@@ -35,14 +35,11 @@ function addBookToLibrary(title,author,pages,read) {
 }
 
 function displayBookToLibrary(){
-
-  bookDisplayElement.innerHTML = '';
-  
   myLibrary.forEach(book => {
     const div = document.createElement('div');
     div.classList.add('book-card');
     div.innerHTML = `
-      <div>Title: ${book.title}, Author: ${book.author}, ${book.pages} pages, Read: ${book.read}</div>
+      <div>Title: ${book.title}, Author: ${book.author}, ${book.pages} pages, ${book.read}</div>
     `
     bookDisplayElement.appendChild(div);
     console.log(book);
@@ -60,7 +57,6 @@ bookButtonElement.addEventListener('click', () => {
   // bookReadElement.value = '';
   // addBookToLibrary(bookTitleValue,bookAuthorValue,bookPagesValue,bookReadValue);
   addBookToLibrary('bookTitleValue','bookAuthorValue','bookPagesValue','bookReadValue');
-  displayBookToLibrary();
   
   console.log(myLibrary);
 })

@@ -2,15 +2,8 @@ body{
   width: 100%;
   height: 100vh;
 }
-.container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid red;
-  height: 100%;
-}
 .book-display{
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,5 +26,5 @@ body{
   border-radius: 10px;
   border: none;
   box-shadow: 1px 1px 6px  rgba(0, 0, 0, 0.219);
-  width: 19%;
+  width: 18%;
 }

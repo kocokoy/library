@@ -15,6 +15,7 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 1px solid red;
 }
 .book-card{
   box-shadow: 1px 1px 6px  rgba(0, 0, 0, 0.219);

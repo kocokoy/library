@@ -21,21 +21,17 @@ function Book(title,author,pages,read) {
   };
 }
 
-function addBookToLibrary(title,author,pages,read) {
-  const book = new Book(title,author,pages,read);
+function addBookToLibrary() {
+  const book = new Book('test1','test2','test3','test4');
+  const book2 = new Book('test1','test2','test3','test4');
+  
   myLibrary.push(book.info());
+  myLibrary.push(book2.info());
 }
 
 bookButtonElement.addEventListener('click', () => {
-  const bookTitleValue = bookTitleElement.value;
-  const bookAuthorValue = bookAuthorElement.value;
-  const bookPagesValue = bookPagesElement.value;
-  const bookReadValue = bookReadElement.value;
-  bookTitleElement.value = '';
-  bookAuthorElement.value = '';
-  bookPagesElement.value = '';
-  bookReadElement.value = '';
-  addBookToLibrary(bookTitleValue,bookAuthorValue,bookPagesValue,bookReadValue);
-  console.log(myLibrary);
+  addBookToLibrary();
 })
 
+
+console.log(myLibrary);

@@ -32,9 +32,6 @@ bookButtonElement.addEventListener('click', () => {
   const bookPagesValue = bookPagesElement.value;
   const bookReadValue = bookReadElement.value;
   bookTitleElement.value = '';
-  bookAuthorElement.value = '';
-  bookPagesElement.value = '';
-  bookReadElement.value = '';
   addBookToLibrary(bookTitleValue,bookAuthorValue,bookPagesValue,bookReadValue);
   console.log(myLibrary);
 })

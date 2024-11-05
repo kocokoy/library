@@ -1,17 +1,9 @@
 body{
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 100vh;
   height: 100vh;
   justify-content: center;
   align-items: center;
   border: 1px solid red;
-}
-input{
-  padding: 10px;
-  margin: 10px;
-}
-button{
-  padding: 10px;
-  margin: 10px;
 }

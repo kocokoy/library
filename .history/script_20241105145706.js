@@ -29,12 +29,12 @@ function addBookToLibrary(title,author,pages,read) {
 bookButtonElement.addEventListener('click', () => {
   const bookTitleValue = bookTitleElement.value;
   const bookAuthorValue = bookAuthorElement.value;
-  const bookPagesValue = bookPagesElement.value;
-  const bookReadValue = bookReadElement.value;
+  const bookPagesValue = bookAuthorElement.value;
+  const bookReadValue = bookAuthorElement.value;
   bookTitleElement.value = '';
   bookAuthorElement.value = '';
-  bookPagesElement.value = '';
-  bookReadElement.value = '';
+  bookAuthorElement.value = '';
+  bookAuthorElement.value = '';
   addBookToLibrary(bookTitleValue,bookAuthorValue,bookPagesValue,bookReadValue);
   console.log(myLibrary);
 })

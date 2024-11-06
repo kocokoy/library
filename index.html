@@ -8,16 +8,24 @@
 </head>
 <body>
   <div class="container">
-    <div class="book-display jsBookDisplay">
+    <div class="display-button-card">
+      <div class="book-display jsBookDisplay">
+      </div>
+      <button class="new-book-button jsNewBookButton">New Book</button>
     </div>
-    <button class="new-book-button jsNewBookButton">New Book</button>
+    <div class="add-new-book-card-holder hide-add-new-book-card-holder">
+      <div class="add-new-book-card ">
+        <div>
+          <input class="jsBookTitle" type="text">
+          <input class="jsBookAuthor" type="text">
+          <input class="jsBookPages" type="text">
+          <input class="jsBookRead" type="text">
+          <button class="jsAddBook">Add</button>
+        </div>
+      </div>
+    </div>
+    
   </div>
-  <!-- <input class="jsBookTitle" type="text">
-  <input class="jsBookAuthor" type="text">
-  <input class="jsBookPages" type="text">
-  <input class="jsBookRead" type="text">
- -->
-
 <script src="script.js"></script>
 </body>
 </html>

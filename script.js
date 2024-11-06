@@ -50,18 +50,15 @@ function displayBookToLibrary(){
 }
 
 bookButtonElement.addEventListener('click', () => {
-  // const bookTitleValue = bookTitleElement.value;
-  // const bookAuthorValue = bookAuthorElement.value;
-  // const bookPagesValue = bookPagesElement.value;
-  // const bookReadValue = bookReadElement.value;
-  // bookTitleElement.value = '';
-  // bookAuthorElement.value = '';
-  // bookPagesElement.value = '';
-  // bookReadElement.value = '';
-  // addBookToLibrary(bookTitleValue,bookAuthorValue,bookPagesValue,bookReadValue);
-  addBookToLibrary('bookTitleValue','bookAuthorValue','bookPagesValue','bookReadValue');
+  const bookTitleValue = bookTitleElement.value;
+  const bookAuthorValue = bookAuthorElement.value;
+  const bookPagesValue = bookPagesElement.value;
+  const bookReadValue = bookReadElement.value;
+  bookTitleElement.value = '';
+  bookAuthorElement.value = '';
+  bookPagesElement.value = '';
+  bookReadElement.value = '';
+  addBookToLibrary(bookTitleValue,bookAuthorValue,bookPagesValue,bookReadValue);
   displayBookToLibrary();
-  
-  console.log(myLibrary);
 })
 

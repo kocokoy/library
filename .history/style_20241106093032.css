@@ -48,10 +48,9 @@ body{
 
 /* add book card */
 
-.hide-add-new-book-card-holder{
-  display: none;
+.hide-add-new-book-card{
+  opacity: 0%;
 }
-
 .add-new-book-card-holder{
   display: flex;
   flex-direction: column;
@@ -59,11 +58,9 @@ body{
   justify-content: center;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.137);
-  position: absolute;
-  
 }
 .add-new-book-card {
+  position: absolute;
   background-color: white;
   box-shadow: 1px 1px 6px  rgba(0, 0, 0, 0.219);
   height: 50%;

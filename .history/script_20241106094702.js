@@ -4,8 +4,7 @@ const bookPagesElement = document.querySelector('.jsBookPages');
 const bookReadElement = document.querySelector('.jsBookRead');
 const bookButtonElement = document.querySelector('.jsNewBookButton');
 const bookDisplayElement = document.querySelector('.jsBookDisplay');
-const addNewBookCardHolderElement = document.querySelector('.jsAddNewBookCardHolder');
-const addBookElement = document.querySelector('.jsAddBook');
+const AddNewBookCardHolderElement = document.querySelector('.jsAddNewBookCardHolder');
 
 const myLibrary = [
   {title: 'To Kill a Mockingbird', author: 'Harper Lee', pages: 281, read: true},
@@ -42,7 +41,8 @@ function addBookToLibrary() {
   bookReadElement.value = '';
   const book = new Book(bookTitleValue,bookAuthorValue,bookPagesValue,bookReadValue);
   myLibrary.push(book.info());
-  
+  AddNewBookCardHolderElement.classList.remove('hide-add-new-book-card-holder');
+  AddNewBookCardHolderElement.classList.add('.add-new-book-card-holder');
 }
 
 function displayBookToLibrary(){
@@ -61,12 +61,7 @@ function displayBookToLibrary(){
 }
 
 bookButtonElement.addEventListener('click', () => {
-  addNewBookCardHolderElement.classList.add('add-new-book-card-holder');
-})
-
-addBookElement.addEventListener('click', () => {
   addBookToLibrary();
   displayBookToLibrary();
-  addNewBookCardHolderElement.classList.remove('add-new-book-card-holder');
 })
 

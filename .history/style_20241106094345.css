@@ -51,7 +51,6 @@ body{
 .hide-add-new-book-card-holder{
   display: none;
 }
-
 .add-new-book-card-holder{
   display: flex;
   flex-direction: column;
@@ -61,7 +60,6 @@ body{
   width: 100%;
   background-color: rgba(0, 0, 0, 0.137);
   position: absolute;
-  
 }
 .add-new-book-card {
   background-color: white;

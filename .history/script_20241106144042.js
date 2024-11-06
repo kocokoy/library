@@ -67,7 +67,7 @@ function displayBookToLibrary(){
     }
     div.innerHTML = `
       ${readButton}
-      <div>Title: ${book.title}, Author: ${book.author}, ${book.pages} pages</div>
+      <div>Title: ${book.title}, Author: ${book.author}, ${book.pages} pages, Read: ${book.read}</div>
       <button class="jsDeleteButton">Delete</button>
     `
     bookDisplayElement.appendChild(div);
@@ -96,9 +96,6 @@ function readButtonClicked(){
     button.addEventListener('click', (event) => {
       const readElement = event.target.closest('.book-card');
       const readId = readElement.getAttribute('data-id');
-      myLibrary[readId].read = !myLibrary[readId].read;
-      console.log(myLibrary);
-      displayBookToLibrary();
     })
   })
 }

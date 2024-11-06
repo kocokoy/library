@@ -44,7 +44,7 @@ function addBookToLibrary() {
   if(!(bookTitleValue && bookAuthorValue && bookPagesValue && bookReadValue)){
     console.log('test');   
   }else{
-    const book = new Book(bookTitleValue,bookAuthorValue,bookPagesValue,JSON.parse(bookReadValue));
+    const book = new Book(bookTitleValue,bookAuthorValue,bookPagesValue,bookReadValue);
     myLibrary.push(book.info());
   }
   
@@ -56,21 +56,24 @@ function displayBookToLibrary(){
   
   myLibrary.forEach((book,i) => {
     const div = document.createElement('div');
-    let readButton = '';
+    const readButton = '';
     div.classList.add('book-card');
     div.setAttribute('data-id',i);
-    console.log(book.read);
     if(book.read){
       readButton = `<button class="jsReadButton book-read">Read</button>`
     }else{
       readButton = `<button class="jsReadButton book-not-read">Read</button>`
     }
     div.innerHTML = `
-      ${readButton}
+      ${readButton};
       <div>Title: ${book.title}, Author: ${book.author}, ${book.pages} pages, Read: ${book.read}</div>
       <button class="jsDeleteButton">Delete</button>
     `
     bookDisplayElement.appendChild(div);
+    // const readButtonElement = document.querySelector('.jsReadButton');
+    
+
+   
 
   })
   deleteButtonClicked();

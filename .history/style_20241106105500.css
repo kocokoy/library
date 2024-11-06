@@ -127,10 +127,3 @@ button{
   border: 1px solid black;
   width: 97%;
 }
-
-.book-read{
-  background-color: green;
-}
-.book-not-read{
-  background-color: red;
-}

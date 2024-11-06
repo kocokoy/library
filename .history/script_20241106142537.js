@@ -44,7 +44,7 @@ function addBookToLibrary() {
   if(!(bookTitleValue && bookAuthorValue && bookPagesValue && bookReadValue)){
     console.log('test');   
   }else{
-    const book = new Book(bookTitleValue,bookAuthorValue,bookPagesValue,JSON.parse(bookReadValue));
+    const book = new Book(bookTitleValue,bookAuthorValue,bookPagesValue,bookReadValue);
     myLibrary.push(book.info());
   }
   

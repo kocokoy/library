@@ -15,6 +15,7 @@ const myLibrary = [
 
 
 displayBookToLibrary();
+deleteButtonClicked();
 
 function Book(title,author,pages,read) {
   this.title = title;
@@ -44,7 +45,7 @@ function addBookToLibrary() {
   if(!(bookTitleValue && bookAuthorValue && bookPagesValue && bookReadValue)){
     console.log('test');   
   }else{
-    const book = new Book(bookTitleValue,bookAuthorValue,bookPagesValue,JSON.parse(bookReadValue));
+    const book = new Book(bookTitleValue,bookAuthorValue,bookPagesValue,bookReadValue);
     myLibrary.push(book.info());
   }
   
@@ -56,24 +57,17 @@ function displayBookToLibrary(){
   
   myLibrary.forEach((book,i) => {
     const div = document.createElement('div');
-    let readButton = '';
     div.classList.add('book-card');
     div.setAttribute('data-id',i);
-    console.log(book.read);
-    if(book.read){
-      readButton = `<button class="jsReadButton book-read">Read</button>`
-    }else{
-      readButton = `<button class="jsReadButton book-not-read">Read</button>`
-    }
     div.innerHTML = `
-      ${readButton}
+      <button>Read</button>
       <div>Title: ${book.title}, Author: ${book.author}, ${book.pages} pages, Read: ${book.read}</div>
       <button class="jsDeleteButton">Delete</button>
     `
+    div.ins
     bookDisplayElement.appendChild(div);
 
   })
-  deleteButtonClicked();
 }
 
 function deleteButtonClicked(){
@@ -82,13 +76,15 @@ function deleteButtonClicked(){
     button.addEventListener('click', (event) => {
       const bookElement =  event.target.closest('.book-card');
       const bookID = bookElement.getAttribute('data-id');
-      console.log(bookID)
-      myLibrary.splice(bookID,1);
-      displayBookToLibrary();
+      console.log(myLibrary);
+      console.log(bookID);
+      // console.log(bookID)
+      // myLibrary.splice(bookID,1);
+      // displayBookToLibrary();
+      // 
     })
   })
 }
-
 bookButtonElement.addEventListener('click', () => {
   addNewBookCardHolderElement.classList.add('add-new-book-card-holder');
 })
@@ -96,8 +92,6 @@ bookButtonElement.addEventListener('click', () => {
 addBookElement.addEventListener('click', () => {
   addBookToLibrary();
   displayBookToLibrary();
-  deleteButtonClicked();
-  console.log(myLibrary);
   addNewBookCardHolderElement.classList.remove('add-new-book-card-holder');
 })
 

@@ -5,9 +5,6 @@ body{
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
-button{
-  cursor: pointer;
-}
 .container{
   display: flex;
   flex-direction: column;
@@ -17,51 +14,28 @@ button{
   width: 100%;
 }
 .display-button-card{
+  border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  width: 55%;
 }
 .book-display{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
-
 .book-card{
+  box-shadow: 1px 1px 6px  rgba(0, 0, 0, 0.219);
+  padding: 10px 0px;
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 10px;
-  width: 90%;
-  height: 60px;
-}
-
-.book-card div{
-  padding: 10px 10px;
-  border-radius: 10px;
-  box-shadow: 1px 1px 6px  rgba(0, 0, 0, 0.219);
-  width: 50%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0px 10px;
-}
-
-.book-card button{
-  padding: 10px 0px;
-  border-radius: 10px;
-  border: none;
-  width: 15%;
-  height: 100%;
-  box-shadow: 1px 1px 6px  rgba(0, 0, 0, 0.219);
+  margin: 5px;
+  width: 100%;
 }
 
 .new-book-button{
@@ -71,9 +45,8 @@ button{
   border: none;
   box-shadow: 1px 1px 6px  rgba(0, 0, 0, 0.219);
   width: 19%;
-
   cursor: pointer;
-  width: 30%;
+  width: 100%;
 }
 
 /* add book card */
@@ -126,11 +99,4 @@ button{
   border-radius: 10px;
   border: 1px solid black;
   width: 97%;
-}
-
-.book-read{
-  background-color: green;
-}
-.book-not-read{
-  background-color: red;
 }

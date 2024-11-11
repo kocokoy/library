@@ -23,10 +23,10 @@ class BookInfoCreator {
 
   get info(){
     return{
-    _title: this._title,
-    _author: this._author,
-    _pages: this._pages,
-    _read: this._read
+    title: this._title,
+    author: this._author,
+    pages: this._pages,
+    read: this._read
     }
   }
 
@@ -92,6 +92,7 @@ class LibraryUI{
       const book = new BookInfoCreator(this.app, bookTitleValue, bookAuthorValue, bookPagesValue, bookReadValue);
 
       // Push the book info into the myLibrary array
+      console.log()
       this.app.myLibrary.push(book.info);
       console.log("Book added:", book.info);
     }
@@ -107,13 +108,13 @@ class LibraryUI{
       div.classList.add('book-card');
       div.setAttribute('data-id',i);
       console.log(book);
-      const readButton = book._read 
+      const readButton = book.read 
       ? `<button class="jsReadButton book-read">Read: Yes</button>`
       : `<button class="jsReadButton book-not-read">Read: No</button>`
 
       div.innerHTML = `
         ${readButton}
-        <div>Title: ${book._title}, Author: ${book._author}, ${book._pages} pages</div>
+        <div>Title: ${book.title}, Author: ${book.author}, ${book.pages} pages</div>
         <button class="jsDeleteButton">Delete</button>
       `
       this.bookDisplayElement.appendChild(div);

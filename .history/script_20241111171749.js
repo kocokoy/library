@@ -13,8 +13,8 @@ class LibraryApp {
 }
 
 class BookInfoCreator {
-  constructor(app,title,author,pages,read){
-    this.app = app
+  constructor(title,author,pages,read){
+    // this.app = app
     this._title = title;
     this._author = author;
     this._pages = pages;
@@ -23,10 +23,10 @@ class BookInfoCreator {
 
   get info(){
     return{
-    _title: this._title,
-    _author: this._author,
-    _pages: this._pages,
-    _read: this._read
+    title: this._title,
+    author: this._author,
+    pages: this._pages,
+    read: this._read
     }
   }
 
@@ -89,10 +89,11 @@ class LibraryUI{
     this.bookReadElement.value = '';
 
     if(bookTitleValue && bookAuthorValue && bookPagesValue && bookReadValue !== undefined){
-      const book = new BookInfoCreator(this.app, bookTitleValue, bookAuthorValue, bookPagesValue, bookReadValue);
+      const book = new BookInfoCreator(bookTitleValue,bookAuthorValue,bookPagesValue,bookReadValue);
 
-      // Push the book info into the myLibrary array
-      this.app.myLibrary.push(book.info);
+      console.log(book.info());
+      this.app.myLibrary.push(book);
+
       console.log("Book added:", book.info);
     }
     
@@ -106,7 +107,6 @@ class LibraryUI{
       const div = document.createElement('div');
       div.classList.add('book-card');
       div.setAttribute('data-id',i);
-      console.log(book);
       const readButton = book._read 
       ? `<button class="jsReadButton book-read">Read: Yes</button>`
       : `<button class="jsReadButton book-not-read">Read: No</button>`

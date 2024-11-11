@@ -1,8 +1,8 @@
 class LibraryApp {
   constructor(){
     this.myLibrary = [
-      {_title: 'To Kill a Mockingbird', _author: 'Harper Lee', _pages: 281, _read: true},
-      {_title: '1984', _author: 'George Orwell', _pages: 328, _read: false},
+      {title: 'To Kill a Mockingbird', author: 'Harper Lee', pages: 281, read: true},
+      {title: '1984', author: 'George Orwell', pages: 328, read: false},
     ];
     this.book = new BookInfoCreator(this);
     this.libraryUI = new LibraryUI(this);
@@ -23,10 +23,10 @@ class BookInfoCreator {
 
   get info(){
     return{
-    _title: this._title,
-    _author: this._author,
-    _pages: this._pages,
-    _read: this._read
+    title: this._title,
+    author: this._author,
+    pages: this._pages,
+    read: this._read
     }
   }
 
@@ -81,18 +81,19 @@ class LibraryUI{
     const bookTitleValue = this.bookTitleElement.value;
     const bookAuthorValue = this.bookAuthorElement.value;
     const bookPagesValue = this.bookPagesElement.value;
-    const bookReadValue = JSON.parse(this.bookReadElement.value); 
+    const bookReadValue = this.bookReadElement.value;
 
     this.bookTitleElement.value= '';
     this.bookAuthorElement.value = '';
     this.bookPagesElement.value = '';
     this.bookReadElement.value = '';
 
-    if(bookTitleValue && bookAuthorValue && bookPagesValue && bookReadValue !== undefined){
-      const book = new BookInfoCreator(this.app, bookTitleValue, bookAuthorValue, bookPagesValue, bookReadValue);
+    if(bookTitleValue && bookAuthorValue && bookPagesValue && bookReadValue){
+      const book = new BookInfoCreator(this.app, bookTitleValue,bookAuthorValue,bookPagesValue,JSON.parse(bookReadValue));
 
-      // Push the book info into the myLibrary array
-      this.app.myLibrary.push(book.info);
+      console.log(book);
+      // this.app.myLibrary.push(book.info());
+
       console.log("Book added:", book.info);
     }
     
@@ -106,14 +107,13 @@ class LibraryUI{
       const div = document.createElement('div');
       div.classList.add('book-card');
       div.setAttribute('data-id',i);
-      console.log(book);
-      const readButton = book._read 
+      const readButton = book.read 
       ? `<button class="jsReadButton book-read">Read: Yes</button>`
       : `<button class="jsReadButton book-not-read">Read: No</button>`
 
       div.innerHTML = `
         ${readButton}
-        <div>Title: ${book._title}, Author: ${book._author}, ${book._pages} pages</div>
+        <div>Title: ${book.title}, Author: ${book.author}, ${book.pages} pages</div>
         <button class="jsDeleteButton">Delete</button>
       `
       this.bookDisplayElement.appendChild(div);
@@ -142,7 +142,7 @@ class LibraryUI{
       button.addEventListener('click', (event) => {
         const readElement = event.target.closest('.book-card');
         const readId = readElement.getAttribute('data-id');
-        this.app.myLibrary[readId]._read = !this.app.myLibrary[readId]._read;
+        this.app.myLibrary[readId].read = !this.app.myLibrary[readId].read;
         console.log(this.app.myLibrary);
         this.displayBookToLibrary();
       })

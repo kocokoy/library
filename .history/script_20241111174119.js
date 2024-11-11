@@ -1,8 +1,8 @@
 class LibraryApp {
   constructor(){
     this.myLibrary = [
-      {_title: 'To Kill a Mockingbird', _author: 'Harper Lee', _pages: 281, _read: true},
-      {_title: '1984', _author: 'George Orwell', _pages: 328, _read: false},
+      {title: 'To Kill a Mockingbird', author: 'Harper Lee', pages: 281, read: true},
+      {title: '1984', author: 'George Orwell', pages: 328, read: false},
     ];
     this.book = new BookInfoCreator(this);
     this.libraryUI = new LibraryUI(this);
@@ -23,10 +23,10 @@ class BookInfoCreator {
 
   get info(){
     return{
-    _title: this._title,
-    _author: this._author,
-    _pages: this._pages,
-    _read: this._read
+    title: this._title,
+    author: this._author,
+    pages: this._pages,
+    read: this._read
     }
   }
 
@@ -106,7 +106,6 @@ class LibraryUI{
       const div = document.createElement('div');
       div.classList.add('book-card');
       div.setAttribute('data-id',i);
-      console.log(book);
       const readButton = book._read 
       ? `<button class="jsReadButton book-read">Read: Yes</button>`
       : `<button class="jsReadButton book-not-read">Read: No</button>`

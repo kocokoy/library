@@ -23,10 +23,10 @@ class BookInfoCreator {
 
   get info(){
     return{
-    _title: this._title,
-    _author: this._author,
-    _pages: this._pages,
-    _read: this._read
+    title: this._title,
+    author: this._author,
+    pages: this._pages,
+    read: this._read
     }
   }
 
